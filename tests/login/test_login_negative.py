@@ -23,12 +23,16 @@ def test_check_input_username_failed(setup_and_teardown):
     username = driver.get_username()
     username.send_keys("testuser")
 
+    time.sleep(2)
+
 def test_check_input_password_falied(setup_and_teardown):
     
     driver = setup_and_teardown
 
     password = driver.get_password()
     password.send_keys("testpassword")
+
+    time.sleep(2)
 
 def test_login_falied(setup_and_teardown):
 
@@ -44,6 +48,8 @@ def test_check_flash_messages_error(setup_and_teardown):
     flash_message = driver.get_flash_messages()
 
     assert "Your username is invalid!" in flash_message
+
+    time.sleep(2)
 
 def test_close_flash_messages_error(setup_and_teardown):
 

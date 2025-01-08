@@ -30,12 +30,16 @@ def test_check_input_username(setup_and_teardown):
     username = driver.get_username()
     username.send_keys("tomsmith")
 
+    time.sleep(2)
+
 def test_check_input_password(setup_and_teardown):
     
     driver = setup_and_teardown
 
     password = driver.get_password()
     password.send_keys("SuperSecretPassword!")
+
+    time.sleep(2)
 
 def test_login(setup_and_teardown):
 
@@ -52,12 +56,16 @@ def test_check_flash_messages_into(setup_and_teardown):
 
     assert "You logged into a secure area!" in flash_message
 
+    time.sleep(2)
+
 def test_close_flash_messages(setup_and_teardown):
 
     driver = setup_and_teardown
 
     close = driver.close_flash_messages()
     close.click()
+
+    time.sleep(2)
 
 def test_check_logout(setup_and_teardown):
 
